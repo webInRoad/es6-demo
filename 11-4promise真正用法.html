@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>promise真正用法</title>
+  <script src="./jquery.js"></script>
+  <script>
+    Promise.all([
+        $.ajax({url:'1.txt',dataType:'json'}),
+        $.ajax({url:'2.txt',dataType:'json'}),
+        $.ajax({url:'3.txt',dataType:'json'})
+      ]).then(arr=>{
+        let [json1,json2,json3] = arr;
+        console.info(json1,json2,json3);
+      },error=>{
+        alert("请求失败")
+      })
+  </script>
+</head>
+<body>
+
+</body>
+</html>

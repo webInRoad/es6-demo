@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>传统js对象</title>
+  <script>
+    // let Person = function(name,age){
+    //   this.name = name;
+    //   this.age = age;
+    // }
+    //等同于下面
+
+    function Person(name,age){
+      this.name = name;
+      this.age = age;
+    }
+    Person.prototype.showName = function(){
+      alert(`我叫${this.name}`);
+    }
+    Person.prototype.showAge = function(){
+      alert(`我${this.age}岁`)
+    }
+    let person1 =new Person("zjh",18);
+    person1.showName();//我叫zjh
+    person1.showAge();//我18岁
+  </script>
+</head>
+<body>
+
+</body>
+</html>

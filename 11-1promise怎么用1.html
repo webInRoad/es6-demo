@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>promise</title>
+  <script src="./jquery.js"></script>
+  <script>
+    let p = new Promise((resolved,reject)=>{
+      $.ajax({
+        url:'1.txt',
+        dataType:'json',
+        success:function(json){
+          resolved(json);
+        },
+        error:function(){
+          reject();
+        }
+      })
+    })
+    p.then(json=>{
+      console.info(json);//{name: "zjh", age: 23}
+    },()=>{
+      alert("操作失败!");
+    })
+  </script>
+</head>
+<body>
+
+</body>
+</html>

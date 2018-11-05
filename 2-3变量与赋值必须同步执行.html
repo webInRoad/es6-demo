@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>变量与赋值必须同步执行</title>
+  <script>
+    // let {a,b};
+    // {a,b}={a:2,b:44};
+    // console.info(a,b);//Uncaught SyntaxError: Missing initializer in destructuring declaration
+
+    let {a,b} = {a:3,b:22};
+    console.info(a,b);//3 22
+  </script>
+</head>
+<body>
+
+</body>
+</html>

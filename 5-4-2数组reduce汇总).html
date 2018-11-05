@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数组汇总reduce</title>
+  <script>
+    let arr = [2,12,43,231];
+    let avg = arr.reduce((tmp,item,index)=>{
+      if(index==arr.length-1){
+        return (tmp+item)/arr.length;
+      }else{
+        return tmp+item;
+      }
+    })
+    console.info(avg);//72
+  </script>
+</head>
+<body>
+
+</body>
+</html>

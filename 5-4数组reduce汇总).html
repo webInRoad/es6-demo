@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>reduce汇总</title>
+  <script>
+    let arr = [2,3,3,2,42,83];
+    let sum = 0;
+    // arr.reduce((tmp,item,index)=>{
+      // console.info(tmp,item,index);//第一次时tmp等于2，后面全是undefined(因为没有return)
+      /*
+      2 3 1
+      undefined 3 2
+      undefined 2 3
+      undefined 42 4
+      undefined 83 5
+       */
+    // })
+    sum = arr.reduce((tmp,item,index)=>{
+      console.info(tmp,item,index);//tmp就是return的值，item是每一项的值，index就是数组序号
+      return tmp+item;
+      /*
+      2 3 1
+      5 3 2
+      8 2 3
+      10 42 4
+      52 83 5
+       */
+    })
+    let avg = sum/arr.length;
+    console.info(avg); //22.5
+  </script>
+</head>
+<body>
+
+</body>
+</html>

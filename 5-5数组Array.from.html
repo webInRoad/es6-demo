@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array.from</title>
+  <style>
+    div{
+      width: 100px;
+      height: 50px;
+      background: #ccc;
+      float: left;
+      margin: 10px;
+    }
+  </style>
+  <script>
+    // Array.from将类数组转化为数组
+    window.onload=()=>{
+      let divs = document.getElementsByTagName("div");
+      Array.from(divs).forEach(item=>item.style.background="yellow")
+    }
+
+  </script>
+</head>
+<body>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>变量提升</title>
+  <script>
+    var a = 12;
+
+    // function show(){
+    //   alert(a);// undefined
+    //   var a = 5;
+    // }
+    function show(){
+      alert(a);//报错 Uncaught ReferenceError: a is not defined
+      let a = 5;
+    }
+    show();
+  </script>
+</head>
+<body>
+
+</body>
+</html>

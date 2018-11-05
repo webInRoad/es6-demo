@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>es6对象bind</title>
+  <script>
+    class Person{
+      constructor(name,age){
+        this.name = name;
+        this.age = age;
+      }
+      showName(){
+        console.info(this);
+        // alert(this);// 1=>[object HTMLDocument]
+        // alert(`我叫${this.name}`);// 1=> 我叫undefined
+        // alert(this);// 2=>[object Object]
+        // alert(`我叫${this.name}`);// 2=> 我叫zjh
+        alert(this);// 3>[object Object]
+        alert(`我叫${this.name}`);//3=> 我叫zjh
+      }
+    }
+    let p = new Person("zjh",22);
+    // document.onclick = p.showName; //1
+    // document.onclick = function(){
+    //   p.showName();
+    // }//2 用函数嵌套函数
+     document.onclick = p.showName.bind(p);//3 bind谁,this就是谁
+  </script>
+</head>
+<body>
+
+</body>
+</html>

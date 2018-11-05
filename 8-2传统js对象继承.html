@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>传统继承</title>
+  <script>
+    function Person(name,age){
+      this.name = name;
+      this.age = age;
+    }
+    Person.prototype.showName = function(){
+      alert(`我叫${this.name}`);
+    }
+    Person.prototype.showAge = function(){
+      alert(`我${this.age}岁`);
+    }
+    function Worker(name,age,work){
+      // Person.call(name,age);//错误的
+      Person.call(this,name,age);//正确的
+      this.work = work;
+    }
+    Worker.prototype = new Person();//必须的
+    Worker.prototype.constructor = Worker;
+    Worker.prototype.showWork = function(){
+      alert(`我做${this.work}工作`)
+    }
+    let worker1 = new Worker('zjh','18','打杂的');
+    worker1.showName();
+    worker1.showAge();
+    worker1.showWork();
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>继承</title>
+  <script>
+    class Person{
+      constructor(name,age){
+        this.name = name;
+        this.age = age;
+      }
+      showName(){
+        alert(`我叫${this.name}`);
+      }
+      showAge(){
+        alert(`我${this.age}岁`)
+      }
+    }
+    class Worker extends Person{
+      constructor(name,age,job){
+        super(name,age);
+        this.job = job;
+      }
+      showJob(){
+        alert(`我做${this.job}工作`)
+      }
+    }
+    let worker = new Worker("zjh",22,"打杂的");
+    worker.showName();
+    worker.showAge();
+    worker.showJob();
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数组map</title>
+  <script>
+    let arr = [43,76,23,13,19];
+    // map 一个对一个 有return语句
+    // let arr2 = arr.map(function(item){
+    //   return item>=60;
+    // })
+    let arr2 = arr.map(item=>item>=60)
+    console.info(arr2); //(5) [false, true, false, false, false]
+  </script>
+</head>
+<body>
+
+</body>
+</html>

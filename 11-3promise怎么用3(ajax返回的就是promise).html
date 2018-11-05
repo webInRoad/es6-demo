@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>promise</title>
+  <script src="./jquery.js"></script>
+  <script>
+    $.ajax({
+      url:'1.txt',
+      dataType:'json',
+    }).then(json=>{
+      console.info(json)
+    },error=>{
+      alert("请求失败!")
+    })
+  </script>
+</head>
+<body>
+
+</body>
+</html>

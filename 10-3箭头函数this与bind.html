@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>箭头函数this与bind</title>
+  <script>
+    document.onclick = function(){
+      let arr = [1,2,4]
+      // arr.a = ()=>{
+      //   alert(this);//一直都[object HTMLDocument] 说明箭头函数里的this优先级高于bind
+      // }
+      arr.a = function(){
+        alert(this);//1,2,4
+        //按钮点击时弹出 12
+      }
+      arr.a();
+      let btn = document.getElementById("btn1");
+      btn.onclick = arr.a.bind(12);
+    }
+
+
+  </script>
+</head>
+<body>
+  <input type="button" value="点击" id="btn1">
+</body>
+</html>

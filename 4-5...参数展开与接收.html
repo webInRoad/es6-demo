@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>参数展开与接收</title>
+  <script>
+    let show = function(...arg){
+      show2(...arg);
+    }
+    let show2 = function(a,b,c){
+      console.info(a,b,c);//12 33 44
+    }
+    show(12,33,44)
+  </script>
+</head>
+<body>
+
+</body>
+</html>

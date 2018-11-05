@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>参数接收</title>
+  <script>
+    // let show = function(a,b,...arg){
+    //   console.info(a,b,arg);
+    // }
+    // show(23,12,323,1212,9);//23 12 (3) [323, 1212, 9]
+
+    let show = function(a,b,...arg,d){
+      console.info(a,b,arg);
+    }
+    show(23,12,323,1212,9); //Uncaught SyntaxError: Rest parameter must be last formal parameter
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

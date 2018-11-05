@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>promise怎么用2</title>
+  <script src="./jquery.js"></script>
+  <script>
+    let p = new Promise((resovled,reject)=>{
+      $.ajax({
+        url:'1.txt',
+        dataType:'json',
+        success:function(json){
+          resovled(json);
+        },
+        error:function(){
+          reject()
+        }
+      })
+    })
+
+    let p2 = new Promise((resolved,reject)=>{
+      $.ajax({
+        url:'2.txt',
+        dataType:'json',
+        success:function(json){
+          resolved(json);
+        },
+        error:function(){
+          reject();
+        }
+      })
+    })
+
+    let p3 = new Promise((resolved,reject)=>{
+      $.ajax({
+        url:'3.txt',
+        dataType:'json',
+        success:function(json){
+          resolved(json);
+        },
+        error(err){
+          reject(err);
+        }
+      })
+    })
+
+    Promise.all([p,p2,p3]).then(arr=>{
+      let [j1,arr1,arr2] = arr;
+      console.info(j1);
+      console.info(arr1);
+      console.info(arr2);
+    },err=>{
+      alert("调用失败")
+    })
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

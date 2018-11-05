@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>块级作用域</title>
+  <script>
+     // window.onload = function(){
+     //  let btns = document.getElementsByTagName("button");
+     //  // for(var i = 0;i<btns.length;i++){
+     //  //   btns[i].onclick= function(){
+     //  //     alert(i);//4 4 4 4
+     //  //   }
+     //  // }
+     //  for(let i = 0;i<btns.length;i++){
+     //    btns[i].onclick= function(){
+     //      alert(i);//0 1 2 3
+     //    }
+     //  }
+     // }
+
+     if(3<5){
+      var a = 14;
+     }
+     alert(a);//14
+     // if(3<5){
+     //  let a = 14;
+     // }
+     // alert(a); //报错
+
+  </script>
+</head>
+<body>
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+  <button>4</button>
+</body>
+</html>
